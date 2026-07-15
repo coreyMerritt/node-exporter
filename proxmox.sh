@@ -6,7 +6,7 @@ cd /tmp
 wget https://github.com/prometheus/node_exporter/releases/download/v1.12.1/node_exporter-1.12.1.linux-amd64.tar.gz
 tar xvfz node_exporter-1.12.1.linux-amd64.tar.gz
 sudo mv node_exporter-1.12.1.linux-amd64/node_exporter /usr/local/bin/
-sudo useradd --no-create-home --shell /usr/sbin/nologin node_exporter
+sudo useradd --no-create-home --shell /usr/sbin/nologin node_exporter || true
 
 sudo tee /etc/systemd/system/node_exporter.service << 'EOF'
 [Unit]
