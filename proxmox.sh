@@ -26,5 +26,4 @@ EOF
 sudo systemctl daemon-reload
 sudo systemctl enable --now node_exporter
 sudo systemctl status --no-pager node_exporter
-curl --silent "http://localhost:9100/metrics" | head -20
-
+curl --silent "http://localhost:9100/metrics" -o /dev/null -w "\n\t%{http_code}\n"
