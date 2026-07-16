@@ -1,0 +1,6 @@
+services:
+  node_exporter:
+    image: prom/node-exporter
+    container_name: node_exporter
+    restart: unless-stopped
+    network_mode: host
