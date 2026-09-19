@@ -4,3 +4,8 @@ services:
     container_name: node_exporter
     restart: unless-stopped
     network_mode: host
+    pid: host
+    volumes:
+      - '/:/host:ro,rslave'
+    command:
+      - '--path.rootfs=/host'
